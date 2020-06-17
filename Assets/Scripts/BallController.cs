@@ -18,7 +18,6 @@ public class BallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // CheckIsStuck();
         Move(direction);
     }
 
