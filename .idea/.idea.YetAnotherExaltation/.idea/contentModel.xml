@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Born2Code\YetAnotherExaltation" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Controllers" t="Include">
+            <e p="GameController.cs" t="Include" />
+            <e p="SaveController.cs" t="Include" />
+            <e p="SoundController.cs" t="Include" />
+          </e>
+          <e p="Utilities" t="Include">
+            <e p="BackgroundParallaxScript.cs" t="Include" />
+            <e p="CircleMove.cs" t="Include" />
+            <e p="DDOL.cs" t="Include" />
+            <e p="DelayedEventsScript.cs" t="Include" />
+            <e p="FastIKFabric.cs" t="Include" />
+            <e p="GameSave.cs" t="Include" />
+            <e p="InputHelper.cs" t="Include" />
+            <e p="Rotator.cs" t="Include" />
+            <e p="SmoothCameraTranslator.cs" t="Include" />
+            <e p="SmoothObjectRotationResetor.cs" t="Include" />
+            <e p="UnityScenePreloader.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="YetAnotherExaltation.sln" t="IncludeFlat" />
+    </e>
+    <e p="C:\Users\Azure Void\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Azure Void\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_YetAnotherExaltation.-408584533.00" t="ExcludeRecursive" />
+  </component>
+</project>
