@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 410880968995790179}
   - component: {fileID: 410880968995790178}
-  - component: {fileID: 3676889557785897741}
   - component: {fileID: 5044222113824614015}
   m_Layer: 0
   m_Name: cannon
@@ -83,18 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3676889557785897741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410880968995790176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59e6be90da1f82f4ca8e1fbe4673faae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &5044222113824614015
 BoxCollider2D:
   m_ObjectHideFlags: 0

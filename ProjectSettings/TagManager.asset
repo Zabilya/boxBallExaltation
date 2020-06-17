@@ -9,6 +9,8 @@ TagManager:
   - UpCannon
   - DownCannon
   - Bullet
+  - Frame
+  - BulletsDestroyer
   layers:
   - Default
   - TransparentFX
