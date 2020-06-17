@@ -22,7 +22,15 @@ public class BulletScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.CompareTag("Frame") || other.transform.CompareTag("BulletsDestroyer"))
+        {
+            if (other.transform.CompareTag("Frame"))
+            {
+                CannonsController cannonsController = GameObject.Find("CannonController").GetComponent<CannonsController>();
+                cannonsController.points++;
+            }
+
             Destroy(gameObject);
+        }
     }
 
     private void OnDestroy()

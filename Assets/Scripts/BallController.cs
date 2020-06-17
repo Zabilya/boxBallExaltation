@@ -8,8 +8,8 @@ public class BallController : MonoBehaviour
     
     private void Start()
     {
-        //TODO рандомные стороны
-        direction = new Vector2(Random.Range(0.5f, 1.0f) * 2, Random.Range(0.5f, 1.0f) * 2);
+        float corner = Random.Range(0.0f, 360.0f);
+        direction = RotateVector2(Vector2.one, corner) * 1.3f;
     }
     
     private void Update()
@@ -39,6 +39,11 @@ public class BallController : MonoBehaviour
         }
     }
 
+    public void IncreaseBallSpeed()
+    {
+        direction *= 1.1f;
+    }
+
     private void Move(Vector2 dir)
     {
         transform.Translate(dir * Time.deltaTime);
@@ -46,6 +51,15 @@ public class BallController : MonoBehaviour
 
     private void CalculateReflectDir(Vector2 norm)
     {
-        direction = Vector2.Reflect(direction, norm);
+        Vector2 trueRef = Vector2.Reflect(direction, norm);
+        direction = RotateVector2(trueRef, Random.Range(-20.0f, 20.0f));
+    }
+
+    private Vector2 RotateVector2(Vector2 vec, float angleDegrees)
+    {
+        float corner = angleDegrees * Mathf.Deg2Rad;
+        float x = vec.x * Mathf.Cos(corner) - vec.y * Mathf.Sin(corner);
+        float y = vec.x * Mathf.Sin(corner) + vec.y * Mathf.Cos(corner);
+        return new Vector2(x, y);
     }
 }

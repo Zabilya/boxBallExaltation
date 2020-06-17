@@ -7,7 +7,7 @@ namespace Utilities
     {
 #if UNITY_EDITOR
         //comment to test only one scene?
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void InitLoadingScene()
         {
             Debug.Log("InitLoadingScene()");
