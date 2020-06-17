@@ -18,34 +18,32 @@ public class BallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckIsStuck();
+        // CheckIsStuck();
         Move(direction);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        switch (other.tag)
+        {
+            case "RightCannon":
+                CalculateReflectDir(Vector2.left);
+                return;
+            case "LeftCannon":
+                CalculateReflectDir(Vector2.right);
+                return;
+            case "UpCannon":
+                CalculateReflectDir(Vector2.down);
+                return;
+            case "DownCannon":
+                CalculateReflectDir(Vector2.up);
+                return;
+        }
     }
 
     private void Move(Vector2 dir)
     {
         transform.Translate(dir * Time.deltaTime);
-    }
-
-    private void CheckIsStuck()
-    {
-        Vector2 pos = transform.position;
-        if (pos.x >= 6.75)
-        {
-            CalculateReflectDir(Vector2.left);
-        }
-        else if (pos.x <= -6.75)
-        {
-            CalculateReflectDir(Vector2.right);
-        }
-        else if (pos.y >= 3.75)
-        {
-            CalculateReflectDir(Vector2.down);
-        }
-        else if (pos.y <= -3.75)
-        {
-            CalculateReflectDir(Vector2.up);
-        }
     }
 
     private void CalculateReflectDir(Vector2 norm)
