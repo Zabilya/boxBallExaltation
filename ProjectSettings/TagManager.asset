@@ -8,6 +8,7 @@ TagManager:
   - LeftCannon
   - UpCannon
   - DownCannon
+  - Frame
   layers:
   - Default
   - TransparentFX
