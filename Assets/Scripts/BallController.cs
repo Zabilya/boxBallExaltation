@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class BallController : MonoBehaviour
 {
     public Vector2 direction;
-
-    // Start is called before the first frame update
-    void Start()
+    
+    private void Start()
     {
         //TODO рандомные стороны
         direction = new Vector2(Random.Range(0.5f, 1.0f) * 2, Random.Range(0.5f, 1.0f) * 2);
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
-        // CheckIsStuck();
         Move(direction);
     }
 
@@ -37,6 +32,9 @@ public class BallController : MonoBehaviour
                 return;
             case "DownCannon":
                 CalculateReflectDir(Vector2.up);
+                return;
+            case "Bullet":
+                SceneManager.LoadScene(1);
                 return;
         }
     }
