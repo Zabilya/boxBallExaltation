@@ -1,11 +1,11 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using Controllers;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class BallController : MonoBehaviour
 {
     public Vector2 direction;
-    
+
     private void Start()
     {
         float corner = Random.Range(0.0f, 360.0f);
@@ -34,7 +34,7 @@ public class BallController : MonoBehaviour
                 CalculateReflectDir(Vector2.up);
                 return;
             case "Bullet":
-                SceneManager.LoadScene(1);
+                GameController.CurrentGameState = GameController.GameState.Lose;
                 return;
         }
     }

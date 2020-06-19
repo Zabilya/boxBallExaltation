@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Controllers;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -9,14 +9,12 @@ public class CannonsController : MonoBehaviour
 {
     public List<GameObject> bullets;
     public int points;
-    private float _bulletSpawnDelay;
-    // private int _maxBulletsCount;
 
     private List<GameObject> _cannons;
     private GameObject _bulletExample;
     private Text _score;
-    private BallController _ballController;
     private float _lastBulletSpawnTime;
+    private float _bulletSpawnDelay;
     private int _lastCannonIndexUsed;
     private int _pointsLastFrame;
     
@@ -24,7 +22,6 @@ public class CannonsController : MonoBehaviour
     {
         points = 0;
         _pointsLastFrame = 0;
-        // _maxBulletsCount = 15;
         _bulletSpawnDelay = 0.5f;
 
         var upCannons = GameObject.FindGameObjectsWithTag("UpCannon");
@@ -37,7 +34,7 @@ public class CannonsController : MonoBehaviour
         _lastCannonIndexUsed = 0;
         bullets = new List<GameObject>();
         _bulletExample = Resources.Load<GameObject>("Prefabs/bullet");
-        _ballController = GameObject.Find("ball").GetComponent<BallController>();
+        GameController.Instance.cannonsController = this;
         _score = GameObject.Find("Score").GetComponent<Text>();
     }
     
@@ -77,7 +74,7 @@ public class CannonsController : MonoBehaviour
     
     private int GetNewCannonIndex()
     {
-        var newIndex = Random.Range(0, _cannons.Count - 1);;
+        var newIndex = Random.Range(0, _cannons.Count - 1);
         
         while (newIndex == _lastCannonIndexUsed)
             newIndex = Random.Range(0, _cannons.Count - 1);
@@ -100,7 +97,7 @@ public class CannonsController : MonoBehaviour
     {
         if (points % 50 == 0)
         {
-            _ballController.IncreaseBallSpeed();
+            GameController.Instance.ballController.IncreaseBallSpeed();
         }
         if (points % 10 == 0)
         {
