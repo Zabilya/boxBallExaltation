@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/_preload.unity
     guid: 28d872e2aa9df2e4dacfdf0aace2367e
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/SetUpScene.unity
+    guid: 910a7bc66d0080e43b58c4637d33cbb1
   m_configObjects: {}
