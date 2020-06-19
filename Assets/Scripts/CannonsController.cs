@@ -32,7 +32,7 @@ public class CannonsController : MonoBehaviour
         var leftCannons = GameObject.FindGameObjectsWithTag("LeftCannon");
         var rightCannons = GameObject.FindGameObjectsWithTag("RightCannon");
         
-        _cannons = upCannons.Concat(downCannons).Concat(leftCannons).Concat(downCannons).ToList();
+        _cannons = upCannons.Concat(downCannons).Concat(leftCannons).Concat(rightCannons).ToList();
         _lastBulletSpawnTime = 0.0f;
         _lastCannonIndexUsed = 0;
         bullets = new List<GameObject>();
@@ -48,13 +48,10 @@ public class CannonsController : MonoBehaviour
             _pointsLastFrame++;
             IncreaseUiAndDifficulty();
         }
-        // if (bullets.Count < _maxBulletsCount)
-        // {
         if (Time.time - _lastBulletSpawnTime > _bulletSpawnDelay)
         {
             SpawnNewBullet();
         }
-        // }
     }
 
     private void SpawnNewBullet()
@@ -96,7 +93,7 @@ public class CannonsController : MonoBehaviour
 
     private void IncreaseUi()
     {
-        _score.text = "Score: " + points;
+        _score.text = "Score\n\n" + points;
     }
 
     private void IncreaseDifficulty()
@@ -105,11 +102,6 @@ public class CannonsController : MonoBehaviour
         {
             _ballController.IncreaseBallSpeed();
         }
-        // if (points % 10 == 0)
-        // {
-            // if (_maxBulletsCount < 50)
-            //     _maxBulletsCount++;
-        // }
         if (points % 10 == 0)
         {
             if (_bulletSpawnDelay > 0.1f)
