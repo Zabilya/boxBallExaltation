@@ -95,7 +95,7 @@ public class CannonsController : MonoBehaviour
 
     private void IncreaseDifficulty()
     {
-        if (points % 50 == 0)
+        if (points % 10 == 0)
         {
             GameController.Instance.ballController.IncreaseBallSpeed();
         }

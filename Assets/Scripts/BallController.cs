@@ -10,6 +10,7 @@ public class BallController : MonoBehaviour
     {
         float corner = Random.Range(0.0f, 360.0f);
         direction = RotateVector2(Vector2.one, corner) * 1.3f;
+        GameController.Instance.ballController = this;
     }
     
     private void Update()
